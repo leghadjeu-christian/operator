@@ -1,0 +1,14 @@
+apiVersion: moodle.adorsys.com/v1
+kind: Moodle
+metadata:
+  name: my-moodle-cr
+  namespace: default
+spec:
+  image: bitnami/moodle:latest
+  replicas: 1
+  serviceType: ClusterIP
+  database:
+    host: my-database-mariadb
+    port: 3306
+    user: bn_moodle
+    password: secret
